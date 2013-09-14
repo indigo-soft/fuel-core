@@ -1,0 +1,20 @@
+{
+	"name": "fuel/core",
+	"type": "fuel-package",
+	"description": "Core Extension package",
+	"keywords": [""],
+	"homepage": "http://fuelphp.com",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "AUTHOR",
+			"email": "AUTHOR@example.com"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	},
+	"extra": {
+		"installer-name": "core"
+	}
+}

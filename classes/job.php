@@ -33,7 +33,7 @@ abstract class Job {
 		}
 		catch (\Exception $e)
 		{
-			throw new \JobException($->getMessage(), $e->getCode());
+			throw new \JobException($e->getMessage(), $e->getCode());
 		}
 	}
 

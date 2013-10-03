@@ -40,6 +40,18 @@ abstract class Job {
 		return $this->_run();
 	}
 
+	public function failure(\Exception $e)
+	{
+		if (method_exists($this, '_failure'))
+		{
+			return $this->_failure($e);
+		}
+		else
+		{
+			throw $e;
+		}
+	}
+
 	public function __construct($args = array())
 	{
 		$this->args = $args;

@@ -43,7 +43,7 @@ abstract class Job {
 				return $this->run();
 				break;
 			default:
-				# code...
+				throw new \BadMethodCallException('Invalid method: '.get_called_class().'::'.$method);
 				break;
 		}
 	}

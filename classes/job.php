@@ -27,14 +27,7 @@ abstract class Job {
 	 */
 	public function run()
 	{
-		try
-		{
-			return $this->_run();
-		}
-		catch (\Exception $e)
-		{
-			throw new \JobException($e->getMessage(), $e->getCode());
-		}
+		return $this->_run();
 	}
 
 	public function __construct($args = array())

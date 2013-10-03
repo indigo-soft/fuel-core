@@ -1,30 +1,59 @@
 <?php
+/**
+ * Fuel Core package
+ *
+ * @package 	Fuel
+ * @subpackage	Core
+ * @version		1.0
+ * @author 		Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @license 	MIT License
+ * @link 		https://github.com/indigo-soft
+ */
 
 namespace Fuel\Core;
 
-class Job {
+class JobException extends \FuelException {}
 
-	public function before() {}
+abstract class Job {
 
-	public function run() {}
+	/**
+	 * Job arguments
+	 *
+	 * @var array
+	 */
+	public $args = array();
 
-	public function after() {}
+	/**
+	 * Abstract function extended by children
+	 *
+	 * @return mixed Job return value
+	 */
+	abstract protected function _run();
+
+	/**
+	 * Run the job
+	 *
+	 * @return mixed Job return value
+	 */
+	public function run()
+	{
+		return $this->_run();
+	}
+
+	public function __construct($args = array())
+	{
+		$this->args = $args;
+	}
 
 	public function __call($method, $arguments)
 	{
 		switch ($method)
 		{
-			case 'setUp':
-				return $this->before();
-				break;
 			case 'perform':
 				return $this->run();
 				break;
-			case 'tearDown':
-				return $this->after();
-				break;
 			default:
-				# code...
+				throw new \BadMethodCallException('Invalid method: '.get_called_class().'::'.$method);
 				break;
 		}
 	}

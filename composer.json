@@ -1,14 +1,17 @@
 {
-	"name": "fuel/core",
+	"name": "indigo-soft/fuel-core",
 	"type": "fuel-package",
 	"description": "Core Extension package",
-	"keywords": [""],
-	"homepage": "http://fuelphp.com",
+	"homepage": "https://github.com/indigo-soft",
 	"license": "MIT",
 	"authors": [
 		{
-			"name": "AUTHOR",
-			"email": "AUTHOR@example.com"
+			"name": "Márk Sági-Kazár",
+			"email": "mark.sagikazar@gmail.com"
+		},
+		{
+			"name": "Tamás Barta",
+			"email": "barta.tamas.d@gmail.com"
 		}
 	],
 	"require": {

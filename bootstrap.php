@@ -13,4 +13,5 @@
 Autoloader::add_classes(array(
 	'Fuel\\Core\\Job'          => __DIR__ . '/classes/job.php',
 	'Fuel\\Core\\JobException' => __DIR__ . '/classes/job.php',
+	'Theme'                    => __DIR__ . '/classes/theme.php',
 ));

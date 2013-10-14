@@ -13,6 +13,13 @@ class Twig_Indigo_Extension extends Twig_Extension
 		return 'indigo';
 	}
 
+	public function getFunctions()
+	{
+		return array(
+			'auth_has_access'    => new Twig_Function_Function('Auth::has_access'),
+		);
+	}
+
 	public function getFilters()
 	{
 

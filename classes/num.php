@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Num helper class extension.
+ */
 class Num extends \Fuel\Core\Num
 {
 	public static function currency($input, $precision = 4)

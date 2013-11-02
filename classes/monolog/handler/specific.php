@@ -3,7 +3,9 @@
 namespace Monolog\Handler;
 
 /**
-* Forwards records to multiple specific handlers
+* Only use handler when the log is defined to be run by that specific handler
+* You can still use bubble if you want, so you can restrict the log to the given handler
+* Just make sure you place your specific handler at the top
 *
 * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
 */

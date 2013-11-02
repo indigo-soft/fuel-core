@@ -15,8 +15,8 @@ Autoloader::add_classes(array(
 	'Num'   => __DIR__ . '/classes/num.php',
 	'Ini'   => __DIR__ . '/classes/ini.php',
 
-	'Monolog\\Handler\\ConsoleHandler'         => __DIR__ . '/classes/monolog/handler/console.php',
-	'Monolog\\Formatter\\ContextLineFormatter' => __DIR__ . '/classes/monolog/formatter/context.php',
+	'Monolog\\Handler\\ConsoleHandler'  => __DIR__ . '/classes/monolog/handler/console.php',
+	'Monolog\\Handler\\SpecificHandler' => __DIR__ . '/classes/monolog/handler/specific.php',
 
 	// TODO: This should be moved to indigo-base
 	'Twig_Indigo_Extension' => __DIR__ . '/classes/twig/indigo/extension.php',

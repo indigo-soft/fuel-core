@@ -7,14 +7,40 @@ namespace Monolog\Handler;
 *
 * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
 */
-class SpecificHandler extends GroupHandler
+class SpecificHandler extends AbstractHandler
 {
+	/**
+	 * @var  HandlerInterface  Handler or Processor
+	 */
+	protected $handler;
+
+	/**
+	 * @param mixed   $interface Handler or Processor
+	 * @param boolean $bubble
+	 */
+	public function __construct(HandlerInterface $handler, $bubble = true)
+	{
+		$this->handler = $handler;
+		$this->bubble = $bubble;
+	}
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isHandling(array $record)
+    {
+    	return $this->handler->isHandling($record);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function handle(array $record)
     {
-    	$processors = empty($record['processor']) ? false : (is_array($record['processor']) ? $record['processor'] : array($record['processor']));
-    	unset($record['processor']);
+    	$processors = empty($record['processors']) ? false : (is_array($record['processors']) ? $record['processors'] : array($record['processors']));
+    	unset($record['processors']);
 
-        $handlers = empty($record['handler']) ? false : (is_array($record['handler']) ? $record['handler'] : array($record['handler']));
+        $handler = empty($record['handler']) ? false : $record['handler'];
         unset($record['handler']);
 
         if ($this->processors) {
@@ -31,18 +57,20 @@ class SpecificHandler extends GroupHandler
             }
         }
 
-        foreach ($this->handlers as $handler) {
-        	if ($handlers === false) {
-            	$handler->handle($record);
-        	} else {
-        		$name = explode('\\', get_class($handler));
-        		$name = end($name);
-        		if (in_array($name, $handlers)) {
-        			$handler->handle($record);
-        		}
-        	}
-        }
+		$name = explode('\\', get_class($this->handler));
+		$name = end($name);
+		if ($name == $handler) {
+			$this->handler->handle($record);
+		}
 
         return false === $this->bubble;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function handleBatch(array $records)
+    {
+        $this->handler->handleBatch($records);
     }
 }

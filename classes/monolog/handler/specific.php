@@ -5,7 +5,7 @@ namespace Monolog\Handler;
 /**
 * Forwards records to multiple specific handlers
 *
-* @author Márk Sági-Kazár <lenar@city.ee>
+* @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
 */
 class SpecificHandler extends GroupHandler
 {

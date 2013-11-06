@@ -10,6 +10,8 @@
  * @link 		https://github.com/indigo-soft
  */
 
+Autoloader::add_core_namespace('Indigo\\Core');
+
 Autoloader::add_classes(array(
 	'Theme' => __DIR__ . '/classes/theme.php',
 	'Num'   => __DIR__ . '/classes/num.php',
@@ -20,4 +22,11 @@ Autoloader::add_classes(array(
 
 	// TODO: This should be moved to indigo-base
 	'Twig_Indigo_Extension' => __DIR__ . '/classes/twig/indigo/extension.php',
+));
+
+Autoloader::add_classes(array(
+	'Indigo\\Core\\Image'         => __DIR__ . '/classes/image.php',
+	'Indigo\\Core\\Image_Driver'  => __DIR__ . '/classes/image/driver.php',
+	'Indigo\\Core\\Image_Gd'      => __DIR__ . '/classes/image/gd.php',
+	'Indigo\\Core\\Image_Imagick' => __DIR__ . '/classes/image/imagick.php',
 ));

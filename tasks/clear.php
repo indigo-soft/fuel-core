@@ -84,7 +84,6 @@ class Clear
 					\Cli::write('Deleting ' . str_replace($root, '', $file->getPathname()));
 					unlink($file->getPathname());
 				}
-				// var_dump($file);
 			}
 		}
 	}

@@ -4,7 +4,6 @@ namespace Fuel\Tasks;
 
 class Clear
 {
-
 	/**
 	 * This method gets ran when a valid method name is not used in the command.
 	 *
@@ -23,8 +22,6 @@ class Clear
 		$this->cache();
 		$this->temp();
 	}
-
-
 
 	/**
 	 * This method gets ran when a valid method name is not used in the command.
@@ -56,7 +53,7 @@ class Clear
 	 *
 	 * Usage (from command line):
 	 *
-	 * php oil r clear:temp "arguments"
+	 * php oil r clear:temp
 	 *
 	 * @return string
 	 */
@@ -75,6 +72,5 @@ class Clear
 			}
 		}
 	}
-
 }
 /* End of file tasks/clear.php */

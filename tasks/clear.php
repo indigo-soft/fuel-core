@@ -63,12 +63,28 @@ class Clear
 		\Cli::write('Clearing temp');
 		\Cli::write("-------------------------------------------\n");
 
-		foreach (new \DirectoryIterator(APPPATH . 'tmp/') as $file)
+		$this->temp_recursive(APPPATH . 'tmp/');
+	}
+
+	protected function temp_recursive($path, $root = null)
+	{
+		is_null($root) and $root = $path;
+		foreach (new \DirectoryIterator($path) as $file)
 		{
 			if ( ! $file->isDot())
 			{
-				\Cli::write('Deleting ' . $file->getFilename());
-				unlink($file->getPathname());
+				if ($file->isDir())
+				{
+					$this->temp_recursive($file->getPathname(), $root);
+					\Cli::write('Deleting ' . str_replace($root, '', $file->getPathname()));
+					rmdir($file->getPathname());
+				}
+				else
+				{
+					\Cli::write('Deleting ' . str_replace($root, '', $file->getPathname()));
+					unlink($file->getPathname());
+				}
+				// var_dump($file);
 			}
 		}
 	}

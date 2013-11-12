@@ -27,16 +27,3 @@ Autoloader::add_classes(array(
 	'Indigo\\Core\\Image_Gd'      => __DIR__ . '/classes/image/gd.php',
 	'Indigo\\Core\\Image_Imagick' => __DIR__ . '/classes/image/imagick.php',
 ));
-
-\Package::load('menu');
-
-$menu = \Menu::instance('admin');
-
-$menu->add(array(
-	array(
-		'name' => 'Dashboard',
-		'url' => 'admin',
-		'badge' => 3,
-		'icon' => 'dashboard'
-	)
-));

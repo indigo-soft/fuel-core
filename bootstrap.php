@@ -19,9 +19,6 @@ Autoloader::add_classes(array(
 
 	'Monolog\\Handler\\ConsoleHandler'  => __DIR__ . '/classes/monolog/handler/console.php',
 	'Monolog\\Handler\\SpecificHandler' => __DIR__ . '/classes/monolog/handler/specific.php',
-
-	// TODO: This should be moved to indigo-base
-	'Twig_Indigo_Extension' => __DIR__ . '/classes/twig/indigo/extension.php',
 ));
 
 Autoloader::add_classes(array(
@@ -29,4 +26,17 @@ Autoloader::add_classes(array(
 	'Indigo\\Core\\Image_Driver'  => __DIR__ . '/classes/image/driver.php',
 	'Indigo\\Core\\Image_Gd'      => __DIR__ . '/classes/image/gd.php',
 	'Indigo\\Core\\Image_Imagick' => __DIR__ . '/classes/image/imagick.php',
+));
+
+\Package::load('menu');
+
+$menu = \Menu::instance('admin');
+
+$menu->add(array(
+	array(
+		'name' => 'Dashboard',
+		'url' => 'admin',
+		'badge' => 3,
+		'icon' => 'dashboard'
+	)
 ));

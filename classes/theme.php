@@ -35,4 +35,34 @@ class Theme extends \Fuel\Core\Theme
 		return $this;
 	}
 
+	public function get_paths()
+	{
+		return $this->paths;
+	}
+
+	public function find_file($view, $themes = null)
+	{
+		if (is_null($themes))
+		{
+			$themes = $this->get_parent_themes($this->active['name']);
+		}
+		return parent::find_file($view, $themes);
+	}
+
+	public function get_parent_themes($theme_name)
+	{
+		$return = array($this->create_theme_array($theme_name));
+		$theme_info = $this->load_info($theme_name);
+		if ( ! empty($theme_info['parent']))
+		{
+			$return = array_merge($return, $this->get_parent_themes($theme_info['parent']));
+		}
+		elseif($theme_name !== $this->fallback['name'])
+		{
+			$return = array_merge($return, $this->fallback);
+		}
+
+		return $return;
+	}
+
 }

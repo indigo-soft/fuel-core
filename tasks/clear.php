@@ -46,6 +46,8 @@ class Clear
 		{
 			\Cache::delete($name);
 		}
+
+		$this->delete_recursive(APPPATH . 'cache/');
 	}
 
 	/**
@@ -63,10 +65,10 @@ class Clear
 		\Cli::write('Clearing temp');
 		\Cli::write("-------------------------------------------\n");
 
-		$this->temp_recursive(APPPATH . 'tmp/');
+		$this->delete_recursive(APPPATH . 'tmp/');
 	}
 
-	protected function temp_recursive($path, $root = null)
+	protected function delete_recursive($path, $root = null)
 	{
 		is_null($root) and $root = $path;
 		foreach (new \DirectoryIterator($path) as $file)

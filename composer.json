@@ -1,8 +1,8 @@
 {
-	"name": "indigo-soft/fuel-core",
+	"name": "indigophp/core",
 	"type": "fuel-package",
 	"description": "Core Extension package",
-	"homepage": "https://github.com/indigo-soft",
+	"homepage": "https://indigophp.com",
 	"license": "MIT",
 	"authors": [
 		{
@@ -16,8 +16,5 @@
 	],
 	"require": {
 		"composer/installers": "~1.0"
-	},
-	"extra": {
-		"installer-name": "core"
 	}
 }

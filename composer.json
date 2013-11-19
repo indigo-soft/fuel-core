@@ -1,5 +1,5 @@
 {
-	"name": "indigophp/indigo-core",
+	"name": "indigophp/core",
 	"type": "fuel-package",
 	"description": "Core Extension package",
 	"homepage": "https://github.com/indigo-soft",

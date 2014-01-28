@@ -1,7 +1,8 @@
 {
 	"name": "indigophp/fuel-core",
 	"type": "fuel-package",
-	"description": "Core Extension package",
+	"description": "Fuel Core Extension",
+	"keywords": ["fuel", "core", "extension"],
 	"homepage": "https://indigophp.com",
 	"license": "MIT",
 	"authors": [
@@ -16,5 +17,8 @@
 	],
 	"require": {
 		"composer/installers": "~1.0"
+	},
+	"extra": {
+		"installer-name": "queue"
 	}
 }

@@ -7,7 +7,7 @@
  * @version		1.0
  * @author 		Márk Sági-Kazár <mark.sagikazar@gmail.com>
  * @license 	MIT License
- * @link 		https://github.com/indigo-soft
+ * @link 		https://indigophp.com
  */
 
 Autoloader::add_core_namespace('Indigo\\Core');

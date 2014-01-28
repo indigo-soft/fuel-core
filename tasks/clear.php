@@ -15,12 +15,35 @@ class Clear
 	 */
 	public function run()
 	{
-		\Cli::write('===========================================');
-		\Cli::write('Running all clear tasks');
-		\Cli::write("-------------------------------------------\n");
-
 		$this->cache();
+		\Cli::write("\n");
+		$this->opcache();
+		\Cli::write("\n");
 		$this->temp();
+		\Cli::write("\n");
+	}
+
+	public function opcache()
+	{
+		if (function_exists('opcache_reset'))
+		{
+			\Cli::write('===========================================');
+			\Cli::write('Clearing OpCache');
+			\Cli::write("-------------------------------------------\n");
+
+			if (\Ini::get('opcache.enable', '0') !== '1')
+			{
+				\Cli::error('OpCache is disabled.');
+			}
+			elseif (\Ini::get('opcache.enable_cli', '0') !== '1')
+			{
+				\Cli::error('OpCache CLI is disabled.');
+			}
+			else
+			{
+				opcache_reset();
+			}
+		}
 	}
 
 	/**
@@ -47,7 +70,7 @@ class Clear
 			\Cache::delete($name);
 		}
 
-		$this->delete_recursive(APPPATH . 'cache/');
+		$this->clear(APPPATH . 'cache/');
 	}
 
 	/**
@@ -65,26 +88,44 @@ class Clear
 		\Cli::write('Clearing temp');
 		\Cli::write("-------------------------------------------\n");
 
-		$this->delete_recursive(APPPATH . 'tmp/');
+		$this->clear(APPPATH . 'tmp/');
 	}
 
-	protected function delete_recursive($path, $root = null)
+	protected function clear($path)
 	{
-		is_null($root) and $root = $path;
+		$base_path = str_replace(APPPATH, 'APPPATH/', $path);
+
+		\Cli::write('Clearing path: ' . $base_path);
+
 		foreach (new \DirectoryIterator($path) as $file)
 		{
 			if ( ! $file->isDot())
 			{
+				$file_path = str_replace($path, $base_path, $file->getPathname());
+
 				if ($file->isDir())
 				{
-					$this->temp_recursive($file->getPathname(), $root);
-					\Cli::write('Deleting ' . str_replace($root, '', $file->getPathname()));
-					rmdir($file->getPathname());
+					try
+					{
+						\File::delete_dir($file->getPathname());
+						\Cli::write('Deleting ' . $file_path . DS);
+					}
+					catch (\Exception $e)
+					{
+						\Cli::error('Directory cannot be deleted: ' . $file_path . DS);
+					}
 				}
 				else
 				{
-					\Cli::write('Deleting ' . str_replace($root, '', $file->getPathname()));
-					unlink($file->getPathname());
+					try
+					{
+						\File::delete($file->getPathname());
+						\Cli::write('Deleting ' . $file_path);
+					}
+					catch (\Exception $e)
+					{
+						\Cli::error('File cannot be deleted: ' . $file_path);
+					}
 				}
 			}
 		}

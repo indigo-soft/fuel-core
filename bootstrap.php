@@ -18,7 +18,6 @@ Autoloader::add_classes(array(
 	'Ini'   => __DIR__ . '/classes/ini.php',
 
 	'Monolog\\Handler\\ConsoleHandler'  => __DIR__ . '/classes/monolog/handler/console.php',
-	'Monolog\\Handler\\SpecificHandler' => __DIR__ . '/classes/monolog/handler/specific.php',
 ));
 
 Autoloader::add_classes(array(

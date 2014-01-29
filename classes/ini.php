@@ -38,9 +38,9 @@ class Ini
 	/**
 	 * Set one or an array of values
 	 *
-	 * @param	mixed	$key	Key or array of key-value pairs
-	 * @param	mixed	$value	Value
-	 * @return	mixed 			Old value, false, or array
+	 * @param  mixed  $key    Key or array of key-value pairs
+	 * @param  mixed  $value  Value
+	 * @return mixed Old value, false, or array
 	 */
 	public static function set($key, $value = null)
 	{
@@ -64,8 +64,8 @@ class Ini
 	/**
 	 * Get one or all values
 	 *
-	 * @param	mixed	$key	Key or null for all
-	 * @return	mixed			Value or array of values
+	 * @param  mixed  $key  Key or null for all
+	 * @return mixed Value or array of values
 	 */
 	public static function get($key = null)
 	{

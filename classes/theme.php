@@ -23,9 +23,9 @@ class Theme extends \Fuel\Core\Theme
 	/**
 	* Get a config item
 	*
-	* @param	mixed	$key		Config key
-	* @param	mixed	$default	Default value
-	* @return	mixed				Config value or whole config array
+	* @param  mixed  $key      Config key
+	* @param  mixed  $default  Default value
+	* @return mixed Config value or whole config array
 	*/
 	public function get_config($key = null, $default = null)
 	{
@@ -35,9 +35,9 @@ class Theme extends \Fuel\Core\Theme
 	/**
 	* Set a config item
 	*
-	* @param	mixed	$key	Config key or array to merge
-	* @param	mixed	$value	Config value
-	* @return	$this
+	* @param  mixed  $key    Config key or array to merge
+	* @param  mixed  $value  Config value
+	* @return $this
 	*/
 	public function set_config($key, $value = null)
 	{

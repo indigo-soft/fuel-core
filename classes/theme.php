@@ -1,5 +1,23 @@
 <?php
+/**
+ * Part of Fuel Core Extension.
+ *
+ * @package 	Fuel
+ * @subpackage	Core
+ * @version		1.0
+ * @author 		Indigo Development Team
+ * @license 	MIT License
+ * @copyright 	2013 - 2014 Indigo Development Team
+ * @link 		https://indigophp.com
+ */
 
+namespace Indigo\Core;
+
+/**
+ * Theme class extension
+ *
+ * @author Tamás Barta <barta.tamas.d@gmail.com>
+ */
 class Theme extends \Fuel\Core\Theme
 {
 	/**
@@ -46,6 +64,7 @@ class Theme extends \Fuel\Core\Theme
 		{
 			$themes = $this->get_parent_themes($this->active['name']);
 		}
+
 		return parent::find_file($view, $themes);
 	}
 
@@ -53,6 +72,7 @@ class Theme extends \Fuel\Core\Theme
 	{
 		$return = array($this->create_theme_array($theme_name));
 		$theme_info = $this->load_info($theme_name);
+
 		if ( ! empty($theme_info['parent']))
 		{
 			$return = array_merge($return, $this->get_parent_themes($theme_info['parent']));

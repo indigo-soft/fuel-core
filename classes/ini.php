@@ -1,14 +1,27 @@
 <?php
+/**
+ * Part of Fuel Core Extension.
+ *
+ * @package 	Fuel
+ * @subpackage	Core
+ * @version		1.0
+ * @author 		Indigo Development Team
+ * @license 	MIT License
+ * @copyright 	2013 - 2014 Indigo Development Team
+ * @link 		https://indigophp.com
+ */
+
+namespace Indigo\Core;
 
 /**
- * PHP ini helper class.
+ * PHP ini helper class
+ *
+ * @author Márk-Sági-Kazár <mark.sagikazar@gmail.com>
  */
 class Ini
 {
 	/**
 	 * Autoload PHP configuration and set values
-	 *
-	 * @return	void
 	 */
 	public static function _init()
 	{

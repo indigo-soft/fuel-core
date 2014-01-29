@@ -1,7 +1,23 @@
 <?php
+/**
+ * Part of Fuel Core Extension.
+ *
+ * @package 	Fuel
+ * @subpackage	Core
+ * @version		1.0
+ * @author 		Indigo Development Team
+ * @license 	MIT License
+ * @copyright 	2013 - 2014 Indigo Development Team
+ * @link 		https://indigophp.com
+ */
 
 namespace Indigo\Core;
 
+/**
+ * Image GD class extension
+ *
+ * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ */
 class Image_Gd extends \Fuel\Core\Image_Gd
 {
 	public function create($width, $height, $bgcolor = array(0, 0, 0, 0))

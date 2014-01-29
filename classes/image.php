@@ -4,11 +4,11 @@
  *
  * @package 	Fuel
  * @subpackage	Core
- * @version		1.0
- * @author 		Indigo Development Team
+ * @version 	1.0
+ * @author		Indigo Development Team
  * @license 	MIT License
- * @copyright 	2013 - 2014 Indigo Development Team
- * @link 		https://indigophp.com
+ * @copyright	2013 - 2014 Indigo Development Team
+ * @link		https://indigophp.com
  */
 
 namespace Indigo\Core;

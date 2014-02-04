@@ -28,8 +28,9 @@ Autoloader::add_classes(array(
 	/**
 	 * Core extensions
 	 */
-	'Indigo\\Core\\Theme' => __DIR__ . '/classes/theme.php',
-	'Indigo\\Core\\Num'   => __DIR__ . '/classes/num.php',
+	'Indigo\\Core\\Module' => __DIR__ . '/classes/module.php',
+	'Indigo\\Core\\Num'    => __DIR__ . '/classes/num.php',
+	'Indigo\\Core\\Theme'  => __DIR__ . '/classes/theme.php',
 
 	/**
 	 * ORM extensions

@@ -11,7 +11,7 @@
  * @link		https://indigophp.com
  */
 
-namespace Indigo\Core;
+namespace Indigo\Orm;
 
 use Orm\Model;
 use Orm\Model_Temporal;

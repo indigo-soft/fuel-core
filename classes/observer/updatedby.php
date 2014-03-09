@@ -90,7 +90,7 @@ class Observer_UpdatedBy extends Observer
 			}
 		}
 
-		if ($obj->is_changed() or $relation_changed and $user_id = \Auth::get_user_id())
+		if (($obj->is_changed() or $relation_changed) and $user_id = \Auth::get_user_id())
 		{
 			$obj->{$this->_property} = $user_id[1];
 		}

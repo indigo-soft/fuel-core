@@ -31,10 +31,4 @@ Autoloader::add_classes(array(
 	'Indigo\\Core\\Module' => __DIR__ . '/classes/module.php',
 	'Indigo\\Core\\Num'    => __DIR__ . '/classes/num.php',
 	'Indigo\\Core\\Theme'  => __DIR__ . '/classes/theme.php',
-
-	/**
-	 * ORM extensions
-	 */
-	'Indigo\\Orm\\Observer_CreatedBy' => __DIR__ . '/classes/observer/createdby.php',
-	'Indigo\\Orm\\Observer_UpdatedBy' => __DIR__ . '/classes/observer/updatedby.php',
 ));

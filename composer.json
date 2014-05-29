@@ -20,7 +20,8 @@
 	},
 	"autoload": {
 		"psr-0": {
-			"Monolog\\": "lib/"
+			"Monolog\\": "lib/",
+			"Fuel\\Orm\\": "lib/"
 		}
 	},
 	"extra": {

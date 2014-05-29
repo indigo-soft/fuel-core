@@ -1,30 +1,26 @@
 <?php
-/**
- * Part of Fuel Core Extension.
+
+/*
+ * This file is part of the Indigo Core package.
  *
- * @package 	Fuel
- * @subpackage	Core
- * @version 	1.0
- * @author		Indigo Development Team
- * @license 	MIT License
- * @copyright	2013 - 2014 Indigo Development Team
- * @link		https://indigophp.com
+ * (c) Indigo Development Team
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
-namespace Indigo\Orm;
+namespace Fuel\Orm\Observer;
 
-use Orm\Model;
-use Orm\Model_Temporal;
-use Orm\Observer;
+use Orm;
 
 /**
- * UpdatedBy observer
+ * Updated By observer
  *
  * Sets a user_id property on insert
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Observer_UpdatedBy extends Observer
+class Updatedby extends Orm\Observer
 {
 	/**
 	 * Default property to set the id on
@@ -66,7 +62,7 @@ class Observer_UpdatedBy extends Observer
 	 *
 	 * @param Model Model object subject of this observer method
 	 */
-	public function before_save(Model $obj)
+	public function before_save(Orm\Model $obj)
 	{
 		$this->before_update($obj);
 	}
@@ -76,7 +72,7 @@ class Observer_UpdatedBy extends Observer
 	 *
 	 * @param Model Model object subject of this observer method
 	 */
-	public function before_update(Model $obj)
+	public function before_update(Orm\Model $obj)
 	{
 		// If there are any relations loop through and check if any of them have been changed
 		$relation_changed = false;
@@ -105,7 +101,7 @@ class Observer_UpdatedBy extends Observer
 	 * @param  string $relation
 	 * @return bool
 	 */
-	protected function relation_changed(Model $obj, $relation)
+	protected function relation_changed(Orm\Model $obj, $relation)
 	{
 		// Check that the relation exists
 		if ($obj->relations($relation) === false)

@@ -1,30 +1,26 @@
 <?php
-/**
- * Part of Fuel Core Extension.
+
+/*
+ * This file is part of the Indigo Core package.
  *
- * @package 	Fuel
- * @subpackage	Core
- * @version 	1.0
- * @author		Indigo Development Team
- * @license 	MIT License
- * @copyright	2013 - 2014 Indigo Development Team
- * @link		https://indigophp.com
+ * (c) Indigo Development Team
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
-namespace Indigo\Orm;
+namespace Fuel\Orm\Observer;
 
-use Orm\Model;
-use Orm\Model_Temporal;
-use Orm\Observer;
+use Orm;
 
 /**
- * CreatedBy observer
+ * Created By observer
  *
  * Sets a user_id property on insert
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Observer_CreatedBy extends Observer
+class Createdby extends Orm\Observer
 {
 	/**
 	 * Default property to set the id on
@@ -57,9 +53,9 @@ class Observer_CreatedBy extends Observer
 	 *
 	 * @param Model Model object subject of this observer method
 	 */
-	public function before_insert(Model $obj)
+	public function before_insert(Orm\Model $obj)
 	{
-		if ($obj instanceof Model_Temporal)
+		if ($obj instanceof Orm\Model_Temporal)
 		{
 			if ($obj->{$obj->temporal_property('end_column')} !== $obj->temporal_property('max_timestamp')) {
 				return false;

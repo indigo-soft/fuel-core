@@ -38,7 +38,3 @@ Autoloader::add_classes(array(
 	'Indigo\\Orm\\Observer_CreatedBy' => __DIR__ . '/classes/observer/createdby.php',
 	'Indigo\\Orm\\Observer_UpdatedBy' => __DIR__ . '/classes/observer/updatedby.php',
 ));
-
-Autoloader::add_classes(array(
-	'Ini' => __DIR__ . '/classes/ini.php',
-));

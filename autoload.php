@@ -15,5 +15,13 @@
 
 use Indigo\Core\Alias;
 
-$namespace = Alias::forge('namespace');
-$namespace->aliasNamespace('Indigo\\Core', '');
+if (Alias::exists('namespace') === false)
+{
+	$namespace = Alias::forge('namespace');
+	$namespace->aliasNamespace('Indigo\\Core', '');
+}
+
+if (Alias::exists('default') === false)
+{
+	Alias::forge();
+}

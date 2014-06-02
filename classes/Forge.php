@@ -53,7 +53,7 @@ abstract class Forge
 	 *
 	 * @return mixed
 	 */
-	abstract static function forge();
+	public static function forge() {}
 
 	/**
 	 * Return an instance or false

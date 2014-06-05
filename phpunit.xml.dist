@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<phpunit bootstrap="phpunit.php" colors="true">
+<phpunit bootstrap="../../core/bootstrap_phpunit.php" colors="true">
     <php>
         <server name="doc_root" value="../../../"/>
         <server name="app_path" value="../../app"/>

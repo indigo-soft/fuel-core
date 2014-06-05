@@ -1,5 +1,10 @@
 # Indigo Core
 
+[![Build Status](https://travis-ci.org/indigophp/fuel-core.svg?branch=develop)](https://travis-ci.org/indigophp/fuel-core)
+[![Latest Stable Version](https://poser.pugx.org/indigophp/fuel-core/v/stable.png)](https://packagist.org/packages/indigophp/fuel-core)
+[![Total Downloads](https://poser.pugx.org/indigophp/fuel-core/downloads.png)](https://packagist.org/packages/indigophp/fuel-core)
+[![License](https://poser.pugx.org/indigophp/fuel-core/license.png)](https://packagist.org/packages/indigophp/fuel-core)
+
 **This is an extension of the Fuel Core with some basic classes.**
 
 

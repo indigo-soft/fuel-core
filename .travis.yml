@@ -9,9 +9,8 @@ before_script:
   - curl get.fuelphp.com/oil | sh
   - cd /tmp
   - oil create fuel
-  - cd fuel/
-  - composer require indigophp/fuel-core:dev-develop
-  - wget https://scrutinizer-ci.com/ocular.phar
+  - cp -r $TRAVIS_BUILD_DIR fuel/packages/core/
+  - wget https://scrutinizer-ci.com/ocular.phar -P fuel/packages/core/
 
 after_script:
-  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+  - cd /tmp/fuel/fuel/packages/core/ && php ocular.phar code-coverage:upload --format=php-clover coverage.clover

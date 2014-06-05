@@ -41,5 +41,6 @@
     },
     "extra": {
         "installer-name": "core"
-    }
+    },
+    "minimum-stability": "dev"
 }

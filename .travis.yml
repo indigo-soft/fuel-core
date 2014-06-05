@@ -1,0 +1,18 @@
+language: php
+php:
+  - 5.3
+  - 5.4
+  - 5.5
+
+script: phpunit -v --coverage-clover=coverage.clover
+
+before_script:
+  - curl get.fuelphp.com/oil | sh
+  - oil create fuel
+  - cd fuel/
+  - composer require indigophp/fuel-core:dev-develop
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - cd fuel/packages/core/
+
+after_script:
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover

@@ -19,6 +19,9 @@
         "composer/installers": "~1.0",
         "fuelphp/alias": "dev-master"
     },
+    "require-dev": {
+        "mockery/mockery": "dev-master"
+    },
     "autoload": {
         "psr-0": {
             "Monolog\\": "lib/",
@@ -30,6 +33,11 @@
         "files": [
             "autoload.php"
         ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Indigo\\Core\\Tests\\": "tests/"
+        }
     },
     "extra": {
         "installer-name": "core"

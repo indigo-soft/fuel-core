@@ -36,6 +36,8 @@ abstract class Forge
 
 	/**
 	 * Initialize class
+	 *
+	 * @codeCoverageIgnore
 	 */
 	public static function _init()
 	{
@@ -52,6 +54,8 @@ abstract class Forge
 	 * Forge and return new instance
 	 *
 	 * @return mixed
+	 *
+	 * @codeCoverageIgnore
 	 */
 	public static function forge() {}
 
@@ -106,6 +110,8 @@ abstract class Forge
 
 	/**
 	 * Don't let this class to be instantiated
+	 *
+	 * @codeCoverageIgnore
 	 */
 	final private function __construct() {}
 }

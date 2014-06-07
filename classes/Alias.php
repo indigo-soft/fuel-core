@@ -20,6 +20,8 @@ use Fuel\Alias\Manager;
  */
 class Alias extends Forge
 {
+	use Forge\Instance;
+
 	public static function forge($instance = 'default', $placement = 'prepend')
 	{
 		$manager = new Manager;

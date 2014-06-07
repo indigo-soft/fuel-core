@@ -20,6 +20,8 @@ use Monolog;
  */
 class Logger extends Forge
 {
+	use Forge\Instance;
+
 	protected static $_config = 'logger';
 
 	public static function forge($instance = 'default', array $handlers = array())

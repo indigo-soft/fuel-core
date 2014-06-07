@@ -20,7 +20,8 @@
         "fuelphp/alias": "dev-master"
     },
     "require-dev": {
-        "mockery/mockery": "dev-master"
+        "codeception/codeception": "~1.8.0",
+        "codeception/mockery-module": "dev-master"
     },
     "autoload": {
         "psr-0": {
@@ -33,11 +34,6 @@
         "files": [
             "autoload.php"
         ]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Indigo\\Core\\Tests\\": "tests/"
-        }
     },
     "extra": {
         "installer-name": "core"

@@ -1,6 +1,8 @@
 <?php
 
-namespace Indigo\Core\Test;
+namespace Indigo\Core;
+
+use Codeception\TestCase\Test;
 
 /**
  * Tests for Logger
@@ -9,13 +11,8 @@ namespace Indigo\Core\Test;
  *
  * @coversDefaultClass Indigo\Core\Logger
  */
-class LoggerTest extends \PHPUnit_Framework_TestCase
+class LoggerTest extends Test
 {
-	public function tearDown()
-	{
-		\Mockery::close();
-	}
-
 	/**
 	 * @covers ::forge
 	 * @group  Core

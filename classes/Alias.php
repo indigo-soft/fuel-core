@@ -14,7 +14,7 @@ namespace Indigo\Core;
 use Fuel\Alias\Manager;
 
 /**
- * Alias container
+ * Alias Forge class
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */

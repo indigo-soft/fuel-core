@@ -14,7 +14,7 @@ namespace Indigo\Core;
 use Monolog;
 
 /**
- * Logger container
+ * Logger Forge class
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */

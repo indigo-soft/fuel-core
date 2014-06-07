@@ -15,10 +15,13 @@
 
 use Indigo\Core\Alias;
 
+// Make sure that instance is NOT forged before
+
 if (Alias::exists('namespace') === false)
 {
 	$namespace = Alias::forge('namespace');
 	$namespace->aliasNamespace('Indigo\\Core', '');
+	$namespace->aliasNamespace('Indigo\\Fuel', '');
 }
 
 if (Alias::exists('default') === false)

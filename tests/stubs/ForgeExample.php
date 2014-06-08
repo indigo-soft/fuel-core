@@ -13,7 +13,7 @@ class ForgeExample extends \Forge
 	}
 }
 
-class ForgeInstanceExample extends ForgeExample
+class AdvancedForgeExample extends ForgeExample
 {
 	use \Indigo\Core\Forge\Instance;
 }

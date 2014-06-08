@@ -19,6 +19,6 @@ class InstanceTest extends Test
 	 */
 	public function testInstance()
 	{
-		$this->assertInstanceOf('stdClass', \ForgeInstanceExample::instance('test'));
+		$this->assertInstanceOf('stdClass', \AdvancedForgeExample::instance('test'));
 	}
 }

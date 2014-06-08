@@ -15,3 +15,4 @@ coverage:
         - classes/Forge.php
         - classes/Forge/*
         - classes/Logger.php
+        - classes/Util/*

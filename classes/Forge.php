@@ -88,7 +88,7 @@ abstract class Forge
 	 * @param  mixed  $instance Anything you can call an instance
 	 * @return mixed Instance
 	 */
-	protected static function newInstance($name, $instance)
+	public static function newInstance($name, $instance)
 	{
 		$class = get_called_class();
 

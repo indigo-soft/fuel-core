@@ -20,7 +20,6 @@ class ForgeTest extends Test
 
 	/**
 	 * @covers ::forge
-	 * @covers ::newInstance
 	 * @group  Core
 	 */
 	public function testForge()
@@ -28,6 +27,18 @@ class ForgeTest extends Test
 		$class = \ForgeExample::forge('test');
 
 		$this->assertInstanceOf('stdClass', $class);
+	}
+
+	/**
+	 * @covers ::newInstance
+	 * @group  Core
+	 */
+	public function testNewInstance()
+	{
+		$class = \ForgeExample::newInstance('new', new \stdClass);
+
+		$this->assertInstanceOf('stdClass', $class);
+		$this->assertTrue(\ForgeExample::exists('new'));
 	}
 
 	/**

@@ -11,6 +11,8 @@
 
 namespace Indigo\Core;
 
+use RuntimeException;
+
 /**
  * Abstract forge class to implement Forge model
  *
@@ -53,11 +55,16 @@ abstract class Forge
 	/**
 	 * Forge and return new instance
 	 *
+	 * Must be implemented by child classes.
+	 *
 	 * @return mixed
 	 *
 	 * @codeCoverageIgnore
 	 */
-	public static function forge() {}
+	public static function forge()
+	{
+		throw new RuntimeException(get_called_class().' must define a ::forge function.');
+	}
 
 	/**
 	 * Return an instance or false
@@ -79,6 +86,33 @@ abstract class Forge
 		}
 
 		return $instance;
+	}
+
+	/**
+	 * Deletes an instance if exists
+	 *
+	 * @param  mixed $instance If true, all instances are deleted
+	 *
+	 * @return boolean
+	 */
+	public static function delete($instance)
+	{
+		$class = get_called_class();
+
+		if ($instance === true)
+		{
+			static::$_instances[$class] = array();
+
+			return true;
+		}
+		elseif (static::exists($instance))
+		{
+			unset(static::$_instances[$class][$instance]);
+
+			return true;
+		}
+
+		return false;
 	}
 
 	/**

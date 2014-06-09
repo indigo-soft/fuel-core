@@ -60,4 +60,15 @@ class ForgeTest extends Test
 		$this->assertInstanceOf('stdClass', \ForgeExample::instance('default'));
 		$this->assertFalse(\ForgeExample::instance('fake'));
 	}
+
+	/**
+	 * @covers ::delete
+	 * @group  Core
+	 */
+	public function testDelete()
+	{
+		$this->assertTrue(\ForgeExample::delete('default'));
+		$this->assertFalse(\ForgeExample::exists('default'));
+		$this->assertFalse(\ForgeExample::delete('fake'));
+	}
 }

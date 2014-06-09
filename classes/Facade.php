@@ -14,11 +14,11 @@ namespace Indigo\Core;
 use RuntimeException;
 
 /**
- * Abstract forge class to implement Forge model
+ * Abstract Facade class to implement Forge-model
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-abstract class Forge
+abstract class Facade
 {
 	/**
 	 * Array of instances

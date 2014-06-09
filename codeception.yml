@@ -12,7 +12,7 @@ settings:
 coverage:
     enabled: true
     include:
-        - classes/Forge.php
-        - classes/Forge/*
+        - classes/Facade.php
+        - classes/Facade/*
         - classes/Logger.php
         - classes/Util/*

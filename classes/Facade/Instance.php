@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Core\Forge;
+namespace Indigo\Core\Facade;
 
 /**
- * Forge instance helper
+ * Facade Instance helper
  *
  * Return forged class if instance is not found
  *

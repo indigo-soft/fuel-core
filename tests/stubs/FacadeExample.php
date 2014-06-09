@@ -5,7 +5,7 @@
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class ForgeExample extends \Forge
+class FacadeExample extends \Facade
 {
 	public static function forge($instance = 'default')
 	{
@@ -13,7 +13,7 @@ class ForgeExample extends \Forge
 	}
 }
 
-class AdvancedForgeExample extends ForgeExample
+class AdvancedFacadeExample extends FacadeExample
 {
-	use \Indigo\Core\Forge\Instance;
+	use \Indigo\Core\Facade\Instance;
 }

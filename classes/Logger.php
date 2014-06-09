@@ -14,13 +14,13 @@ namespace Indigo\Core;
 use Monolog;
 
 /**
- * Logger Forge class
+ * Logger Facade class
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Logger extends Forge
+class Logger extends Facade
 {
-	use Forge\Instance;
+	use Facade\Instance;
 
 	protected static $_config = 'logger';
 

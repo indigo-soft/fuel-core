@@ -14,13 +14,13 @@ namespace Indigo\Core;
 use Fuel\Alias\Manager;
 
 /**
- * Alias Forge class
+ * Alias Facade class
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Alias extends Forge
+class Alias extends Facade
 {
-	use Forge\Instance;
+	use Facade\Instance;
 
 	public static function forge($instance = 'default', $placement = 'prepend')
 	{

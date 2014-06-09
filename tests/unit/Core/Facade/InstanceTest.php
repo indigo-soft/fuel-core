@@ -1,15 +1,15 @@
 <?php
 
-namespace Indigo\Core\Forge;
+namespace Indigo\Core\Facade;
 
 use Codeception\TestCase\Test;
 
 /**
- * Tests for Forge Instance helper
+ * Tests for Facade Instance helper
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  *
- * @coversDefaultClass Indigo\Core\Forge\Instance
+ * @coversDefaultClass Indigo\Core\Facade\Instance
  */
 class InstanceTest extends Test
 {
@@ -19,6 +19,6 @@ class InstanceTest extends Test
 	 */
 	public function testInstance()
 	{
-		$this->assertInstanceOf('stdClass', \AdvancedForgeExample::instance('test'));
+		$this->assertInstanceOf('stdClass', \AdvancedFacadeExample::instance('test'));
 	}
 }

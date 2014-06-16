@@ -44,14 +44,6 @@ class ConfigTest extends Test
 	{
 		$this->assertEquals($this->object, $this->object->setConfig('key', 'value2'));
 		$this->assertEquals('value2', $this->object->getConfig('key'));
-
-		$config = array(
-			'key2' => 'value3'
-		);
-
-		$this->object->setConfig($config);
-
-		$this->assertEquals($config, $this->object->getConfig());
 	}
 
 	/**
@@ -61,23 +53,28 @@ class ConfigTest extends Test
 	public function testMergeConfig()
 	{
 		$config = array(
-			'key2' => 'value3'
-		);
-
-		$this->object->mergeConfig($config);
-
-		$config = array_merge($config, $this->config);
-		$this->assertEquals($config, $this->object->getConfig());
-
-		$this->object->setConfig($this->config);
-
-		$config = array(
 			'key3' => 'value4'
 		);
 
 		$this->object->mergeConfig($config, true);
 
 		$config = array_merge($this->config, $config);
+		$this->assertEquals($config, $this->object->getConfig());
+	}
+
+		/**
+	 * @covers ::mergeConfig
+	 * @group  Core
+	 */
+	public function testMergeConfigReverse()
+	{
+		$config = array(
+			'key2' => 'value3'
+		);
+
+		$this->object->mergeConfig($config);
+
+		$config = array_merge($config, $this->config);
 		$this->assertEquals($config, $this->object->getConfig());
 	}
 }

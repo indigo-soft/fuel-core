@@ -30,8 +30,9 @@ trait Config
 	/**
 	* Get config
 	*
-	* @param  mixed $key     Config key
-	* @param  mixed $default Default value
+	* @param mixed $key     Config key
+	* @param mixed $default Default value
+	*
 	* @return mixed Config setting value or the whole config array
 	*/
 	public function getConfig($key = null, $default = null)
@@ -45,23 +46,16 @@ trait Config
 	}
 
 	/**
-	* Set config
+	* Sets config
 	*
-	* @param  mixed $key   Config key or array of key-value pairs
-	* @param  mixed $value New config value
-	* @return Config
+	* @param mixed $key   Config key or array of key-value pairs
+	* @param mixed $value New config value
+	*
+	* @return this
 	*/
 	public function setConfig($key, $value = null)
 	{
-		// Merge config or just set an element
-		if (is_array($key))
-		{
-			$this->config = $key;
-		}
-		else
-		{
-			\Arr::set($this->config, $key, $value);
-		}
+		\Arr::set($this->config, $key, $value);
 
 		return $this;
 	}
@@ -69,9 +63,10 @@ trait Config
 	/**
 	 * Merge config
 	 *
-	 * @param  array  $config
-	 * @param  boolean $mode
-	 * @return Config
+	 * @param array   $config
+	 * @param boolean $mode   If true config is merged in reversed order
+	 *
+	 * @return this
 	 */
 	public function mergeConfig(array $config, $mode = false)
 	{

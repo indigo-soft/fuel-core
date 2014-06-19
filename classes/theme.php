@@ -77,7 +77,7 @@ class Theme extends \Fuel\Core\Theme
 		}
 		elseif($theme_name !== $this->fallback['name'])
 		{
-			$return = array_merge($return, $this->fallback);
+			$return[] = $this->fallback;
 		}
 
 		return $return;

@@ -1,3 +1,4 @@
 /vendor
+/fuel
 composer.lock
 tests/_log

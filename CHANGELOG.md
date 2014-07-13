@@ -8,5 +8,6 @@
 * Adds `Facade` class
 * Adds `Instance` Facade helper
 * Adds `Logger` class
-* Adds `Createdby` observer
-* Adds `Updatedby` observer
+* Adds `CreatedBy` Observer
+* Adds `UpdatedBy` Observer
+* Adds `Console` Handler

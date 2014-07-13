@@ -34,12 +34,13 @@ class ConsoleHandler extends AbstractProcessingHandler
 	);
 
 	/**
-	 * Set color for level
+	 * Sets the colors for a level
 	 *
-	 * @param  integer     $level
-	 * @param  string      $foreground_color
-	 * @param  string|null $background_color
-	 * @return ConsoleHandler
+	 * @param integer     $level
+	 * @param string      $foreground_color
+	 * @param string|null $background_color
+	 *
+	 * @return this
 	 */
 	public function setColor($level, $foreground_color = 'white', $background_color = null)
 	{

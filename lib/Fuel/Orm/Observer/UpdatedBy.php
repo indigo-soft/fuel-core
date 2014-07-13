@@ -20,7 +20,7 @@ use Orm;
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Updatedby extends Orm\Observer
+class UpdatedBy extends Orm\Observer
 {
 	/**
 	 * Default property to set the id on
@@ -45,7 +45,7 @@ class Updatedby extends Orm\Observer
 	protected $_relations;
 
 	/**
-	 * Set the properties for this observer instance, based on the parent model's
+	 * Sets the properties for this observer instance, based on the parent model's
 	 * configuration or the defined defaults.
 	 *
 	 * @param string Model class this observer is called on
@@ -58,7 +58,7 @@ class Updatedby extends Orm\Observer
 	}
 
 	/**
-	 * Set the UpdatedBy property to the current user id.
+	 * Sets the UpdatedBy property to the current user id.
 	 *
 	 * @param Model Model object subject of this observer method
 	 */
@@ -68,7 +68,7 @@ class Updatedby extends Orm\Observer
 	}
 
 	/**
-	 * Set the UpdatedBy property to the current user id.
+	 * Sets the UpdatedBy property to the current user id.
 	 *
 	 * @param Model Model object subject of this observer method
 	 */
@@ -97,9 +97,10 @@ class Updatedby extends Orm\Observer
 	 * This function is lazy so will return true as soon
 	 * as it finds something that has changed.
 	 *
-	 * @param  Model  $obj
-	 * @param  string $relation
-	 * @return bool
+	 * @param Model  $obj
+	 * @param string $relation
+	 *
+	 * @return boolean
 	 */
 	protected function relation_changed(Orm\Model $obj, $relation)
 	{

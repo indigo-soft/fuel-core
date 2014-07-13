@@ -20,7 +20,7 @@ use Orm;
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Createdby extends Orm\Observer
+class CreatedBy extends Orm\Observer
 {
 	/**
 	 * Default property to set the id on
@@ -37,7 +37,7 @@ class Createdby extends Orm\Observer
 	protected $_property;
 
 	/**
-	 * Set the properties for this observer instance, based on the parent model's
+	 * Sets the properties for this observer instance, based on the parent model's
 	 * configuration or the defined defaults.
 	 *
 	 * @param string Model class this observer is called on
@@ -49,7 +49,7 @@ class Createdby extends Orm\Observer
 	}
 
 	/**
-	 * Set the CreatedBy property to the current user id.
+	 * Sets the CreatedBy property to the current user id.
 	 *
 	 * @param Model Model object subject of this observer method
 	 */

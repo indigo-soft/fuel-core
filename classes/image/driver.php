@@ -1,7 +1,21 @@
 <?php
 
+/*
+ * This file is part of the Indigo Core package.
+ *
+ * (c) Indigo Development Team
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Indigo\Core;
 
+/**
+ * Image Driver class extension
+ *
+ * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ */
 abstract class Image_Driver extends \Fuel\Core\Image_Driver
 {
 	/**
@@ -30,55 +44,5 @@ abstract class Image_Driver extends \Fuel\Core\Image_Driver
 	public function fill($x1, $y1, $x2, $y2, $color = array(0, 0, 0))
 	{
 		return $this;
-	}
-
-	/**
-	 * Creates a new color usable by all drivers.
-	 *
-	 * @param   string   $hex    The hex code of the color
-	 * @return  array    rgba representation of the hex and alpha values.
-	 */
-	protected function create_hex_color($hex)
-	{
-		if ($hex == null)
-		{
-			$red   = 0;
-			$green = 0;
-			$blue  = 0;
-			$alpha = 0;
-		}
-		else
-		{
-			// Check if theres a # in front
-			if (substr($hex, 0, 1) == '#')
-			{
-				$hex = substr($hex, 1);
-			}
-
-			// Break apart the hex
-			if (strlen($hex) == 6 or strlen($hex) == 8)
-			{
-				$red   = hexdec(substr($hex, 0, 2));
-				$green = hexdec(substr($hex, 2, 2));
-				$blue  = hexdec(substr($hex, 4, 2));
-				$alpha = hexdec(substr($hex, 6, 2));
-			}
-			else
-			{
-				$red   = hexdec(substr($hex, 0, 1).substr($hex, 0, 1));
-				$green = hexdec(substr($hex, 1, 1).substr($hex, 1, 1));
-				$blue  = hexdec(substr($hex, 2, 1).substr($hex, 2, 1));
-				$alpha = hexdec(substr($hex, 3, 1).substr($hex, 3, 1));
-			}
-		}
-
-		$alpha = floor($alpha / 2.55);
-
-		return array(
-			'red'   => $red,
-			'green' => $green,
-			'blue'  => $blue,
-			'alpha' => $alpha
-		);
 	}
 }

@@ -11,20 +11,23 @@
 
 namespace Indigo\Core;
 
+use Fuel\Alias\Manager;
+
 /**
- * Image class extension
+ * Alias Facade class
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Image extends \Fuel\Core\Image
+class Alias extends Facade
 {
-	/**
-	 * Creates a new image.
-	 *
-	 * @return  Image_Driver
-	 */
-	public static function create($width, $height, $color = null)
+	use Facade\Instance;
+
+	public static function forge($instance = 'default', $placement = 'prepend')
 	{
-		return static::instance()->create($width, $height, $color);
+		$manager = new Manager;
+
+		$manager->register($placement);
+
+		return static::newInstance($instance, $manager);
 	}
 }

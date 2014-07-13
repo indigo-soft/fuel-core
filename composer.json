@@ -18,7 +18,7 @@
     "require": {
         "composer/installers": "~1.0",
         "indigophp/fuel-composer": "~1.1.0",
-        "fuelphp/alias": "dev-master@dev"
+        "fuelphp/alias": "dev-master"
     },
     "require-dev": {
         "codeception/codeception": "~1.8.0",

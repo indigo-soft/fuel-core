@@ -7,7 +7,7 @@
  */
 class ConfigUtilExample
 {
-	use \Indigo\Core\Util\Config;
+	use \Indigo\Core\Helper\Config;
 
 	public function __construct(array $config)
 	{

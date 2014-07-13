@@ -1,6 +1,6 @@
 <?php
 
-namespace Indigo\Core\Forge;
+namespace Indigo\Core\Helper;
 
 use Codeception\TestCase\Test;
 
@@ -9,7 +9,7 @@ use Codeception\TestCase\Test;
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  *
- * @coversDefaultClass Indigo\Core\Util\Config
+ * @coversDefaultClass Indigo\Core\Helper\Config
  */
 class ConfigTest extends Test
 {

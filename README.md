@@ -4,8 +4,9 @@
 [![Latest Stable Version](https://poser.pugx.org/indigophp/fuel-core/v/stable.png)](https://packagist.org/packages/indigophp/fuel-core)
 [![Total Downloads](https://poser.pugx.org/indigophp/fuel-core/downloads.png)](https://packagist.org/packages/indigophp/fuel-core)
 [![License](https://poser.pugx.org/indigophp/fuel-core/license.png)](https://packagist.org/packages/indigophp/fuel-core)
+[![Dependency Status](https://www.versioneye.com/user/projects/53c2b71eea871e6703000013/badge.svg?style=flat)](https://www.versioneye.com/user/projects/53c2b71eea871e6703000013)
 
-**This is an extension of the Fuel Core with some basic classes.**
+**This is an extension of the Fuel Core and Packages with some basic classes.**
 
 
 ## Install
@@ -23,11 +24,13 @@ Via Composer
 
 ## Usage
 
+This package has multiple usage options. For details please check the code and the documentation.
+
 
 ## Testing
 
 ``` bash
-$ phpunit
+$ codecept run
 ```
 
 

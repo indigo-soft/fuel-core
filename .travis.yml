@@ -14,8 +14,3 @@ before_script:
   - cp -r $TRAVIS_BUILD_DIR fuel/fuel/packages/core/
   - cd fuel/fuel/packages/core/
   - composer install
-  - wget https://scrutinizer-ci.com/ocular.phar
-
-after_script:
-  - cd /tmp/fuel/fuel/packages/core/
-  - php ocular.phar code-coverage:upload --format=php-clover tests/_log/coverage.xml

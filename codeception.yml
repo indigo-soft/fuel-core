@@ -17,3 +17,5 @@ coverage:
         - classes/Facade/*
         - classes/Logger.php
         - classes/Helper/*
+        - lib/Fuel/Fieldset/*
+        - lib/Fuel/Validation/*

@@ -21,13 +21,17 @@
         "fuelphp/alias": "dev-master"
     },
     "require-dev": {
+        "fuelphp/fieldset": "dev-master",
+        "fuelphp/validation": "dev-master",
         "codeception/codeception": "~2.0.0",
         "codeception/mockery-module": "dev-master"
     },
     "autoload": {
         "psr-0": {
             "Monolog\\": "lib/",
-            "Fuel\\Orm\\": "lib/"
+            "Fuel\\Fieldset\\": "lib/",
+            "Fuel\\Orm\\": "lib/",
+            "Fuel\\Validation\\": "lib/"
         },
         "psr-4": {
             "Indigo\\Core\\": "classes/"
@@ -38,5 +42,7 @@
     },
     "extra": {
         "installer-name": "core"
-    }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
 }

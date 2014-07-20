@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Indigo Base package.
+ * This file is part of the Indigo Core package.
  *
  * (c) Indigo Development Team
  *

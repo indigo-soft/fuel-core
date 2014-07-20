@@ -2,6 +2,7 @@
 
 namespace Indigo\Core;
 
+use FacadeExample;
 use Codeception\TestCase\Test;
 
 /**
@@ -15,7 +16,7 @@ class FacadeTest extends Test
 {
 	public function _before()
 	{
-		\FacadeExample::forge();
+		FacadeExample::forge();
 	}
 
 	/**
@@ -24,7 +25,7 @@ class FacadeTest extends Test
 	 */
 	public function testForge()
 	{
-		$class = \FacadeExample::forge('test');
+		$class = FacadeExample::forge('test');
 
 		$this->assertInstanceOf('stdClass', $class);
 	}
@@ -35,10 +36,10 @@ class FacadeTest extends Test
 	 */
 	public function testNewInstance()
 	{
-		$class = \FacadeExample::newInstance('new', new \stdClass);
+		$class = FacadeExample::newInstance('new', new \stdClass);
 
 		$this->assertInstanceOf('stdClass', $class);
-		$this->assertTrue(\FacadeExample::exists('new'));
+		$this->assertTrue(FacadeExample::exists('new'));
 	}
 
 	/**
@@ -47,8 +48,8 @@ class FacadeTest extends Test
 	 */
 	public function testExists()
 	{
-		$this->assertTrue(\FacadeExample::exists('default'));
-		$this->assertFalse(\FacadeExample::exists('fake'));
+		$this->assertTrue(FacadeExample::exists('default'));
+		$this->assertFalse(FacadeExample::exists('fake'));
 	}
 
 	/**
@@ -57,8 +58,8 @@ class FacadeTest extends Test
 	 */
 	public function testInstance()
 	{
-		$this->assertInstanceOf('stdClass', \FacadeExample::instance('default'));
-		$this->assertFalse(\FacadeExample::instance('fake'));
+		$this->assertInstanceOf('stdClass', FacadeExample::instance('default'));
+		$this->assertFalse(FacadeExample::instance('fake'));
 	}
 
 	/**
@@ -67,8 +68,12 @@ class FacadeTest extends Test
 	 */
 	public function testDelete()
 	{
-		$this->assertTrue(\FacadeExample::delete('default'));
-		$this->assertFalse(\FacadeExample::exists('default'));
-		$this->assertFalse(\FacadeExample::delete('fake'));
+		$this->assertTrue(FacadeExample::delete('default'));
+		$this->assertFalse(FacadeExample::exists('default'));
+		$this->assertFalse(FacadeExample::delete('fake'));
+
+		FacadeExample::forge('test');
+		$this->assertTrue(FacadeExample::delete(true));
+		$this->assertFalse(FacadeExample::exists('test'));
 	}
 }

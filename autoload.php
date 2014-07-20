@@ -21,6 +21,7 @@ if (Alias::exists('namespace') === false)
 {
 	$namespace = Alias::forge('namespace');
 	$namespace->aliasNamespace('Indigo\\Core', '');
+	$namespace->aliasNamespace('Indigo\\Core\\Exception', '');
 	$namespace->aliasNamespace('Indigo\\Fuel', '');
 }
 

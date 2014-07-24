@@ -45,6 +45,9 @@
         ]
     },
     "extra": {
+        "branch-alias": {
+            "dev-develop": "1.0.x-dev"
+        },
         "installer-name": "core"
     },
     "prefer-stable": true,

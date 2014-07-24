@@ -63,6 +63,47 @@ class Theme extends \Fuel\Core\Theme
 		return $this->paths;
 	}
 
+	public function get_all_paths($theme_name = null)
+	{
+		$paths = array();
+
+		if ($theme_name === null)
+		{
+			$theme_name = $this->active['name'];
+		}
+
+		$path_prefix = null;
+		$module_path = null;
+
+		if ($this->config['use_modules'] and class_exists('Request', false) and $request = \Request::active() and $module = $request->module)
+		{
+			// we're using module name prefixing
+			$path_prefix = $module.DS;
+
+			// and modules are in a separate path
+			is_string($this->config['use_modules']) and $path_prefix = trim($this->config['use_modules'], '\\/').DS.$path_prefix;
+
+			// do we need to check the module too?
+			$this->config['use_modules'] === true and $module_path = \Module::exists($module).'themes'.DS;
+		}
+
+		foreach ($this->get_parent_themes($theme_name) as $theme)
+		{
+			if ($this->config['use_modules'] and $module)
+			{
+				$paths[] = $theme['path'] . $path_prefix;
+				$paths[] = $module_path.$theme['name'].DS;
+			}
+
+			foreach ($this->paths as $path)
+			{
+				$paths[] = $path . $theme['name'].DS;
+			}
+		}
+
+		return array_filter(array_unique($paths), 'is_dir');
+	}
+
 	/**
 	 * {@inheritdocs}
 	 *

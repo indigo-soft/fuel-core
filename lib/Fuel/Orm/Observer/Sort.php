@@ -15,9 +15,9 @@ use Fuel\Orm\SortableInterface;
 use Orm;
 
 /**
- * Created By observer
+ * Sort observer
  *
- * Sets a user_id property on insert
+ * Sets a sort property on insert
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */

@@ -38,7 +38,7 @@ class CreatedBy extends Orm\Observer
 
 	/**
 	 * Sets the properties for this observer instance, based on the parent model's
-	 * configuration or the defined defaults.
+	 * configuration or the defined defaults
 	 *
 	 * @param string Model class this observer is called on
 	 */
@@ -49,7 +49,7 @@ class CreatedBy extends Orm\Observer
 	}
 
 	/**
-	 * Sets the CreatedBy property to the current user id.
+	 * Sets the CreatedBy property to the current user id
 	 *
 	 * @param Model Model object subject of this observer method
 	 */

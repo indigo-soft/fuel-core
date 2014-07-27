@@ -76,7 +76,5 @@ trait ModelBuilder
 	public static function setBuilder(BuilderInterface $builder)
 	{
 		static::$builder = $builder;
-
-		static::$builder->setWrapperElement(null);
 	}
 }

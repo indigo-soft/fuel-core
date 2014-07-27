@@ -49,7 +49,7 @@ class Sort extends Orm\Observer
 	 *
 	 * @var integer
 	 */
-	protected $offset;
+	protected $_offset;
 
 	/**
 	 * Sets the properties for this observer instance, based on the parent model's

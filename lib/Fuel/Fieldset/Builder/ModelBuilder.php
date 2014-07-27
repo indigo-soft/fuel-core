@@ -51,6 +51,8 @@ trait ModelBuilder
 		if (static::$builder === null)
 		{
 			static::setBuilder(new V1Model);
+
+			static::$builder->setWrapperElement(null);
 		}
 
 		$elements = static::$builder->generate(get_called_class());

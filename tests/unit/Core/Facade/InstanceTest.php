@@ -1,24 +1,34 @@
 <?php
 
+/*
+ * This file is part of the Indigo Core package.
+ *
+ * (c) Indigo Development Team
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Indigo\Core\Facade;
 
 use Codeception\TestCase\Test;
 
 /**
- * Tests for Facade Instance helper
+ * Tests for Facade Instance
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  *
  * @coversDefaultClass Indigo\Core\Facade\Instance
+ * @group              Core
+ * @group              Facade
  */
 class InstanceTest extends Test
 {
 	/**
 	 * @covers ::instance
-	 * @group  Core
 	 */
 	public function testInstance()
 	{
-		$this->assertInstanceOf('stdClass', \AdvancedFacadeExample::instance('test'));
+		$this->assertInstanceOf('stdClass', \AdvancedDummyFacade::instance('test'));
 	}
 }

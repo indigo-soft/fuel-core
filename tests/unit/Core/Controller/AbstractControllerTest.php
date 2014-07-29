@@ -17,8 +17,6 @@ use Codeception\TestCase\Test;
  * Tests for Controllers
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
- *
- * @coversDefaultClass Indigo\Core\Controller\TemplateController
  */
 abstract class AbstractControllerTest extends Test
 {

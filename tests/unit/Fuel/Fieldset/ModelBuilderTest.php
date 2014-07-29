@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Indigo Core package.
+ *
+ * (c) Indigo Development Team
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 use Fuel\Fieldset\Form;
 use Fuel\Fieldset\Builder\V1Model;
 use Codeception\TestCase\Test;
@@ -10,13 +19,13 @@ use Codeception\TestCase\Test;
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  *
  * @coversDefaultClass Fuel\Fieldset\Builder\ModelBuilder
+ * @group              Fuel
  */
 class ModelBuilderTest extends Test
 {
 	/**
 	 * @covers ::forgeForm
 	 * @covers ::populateForm
-	 * @group  Fuel
 	 */
 	public function testForge()
 	{
@@ -33,7 +42,6 @@ class ModelBuilderTest extends Test
 	/**
 	 * @covers ::getBuilder
 	 * @covers ::setBuilder
-	 * @group  Fuel
 	 */
 	public function testGetSet()
 	{

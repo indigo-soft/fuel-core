@@ -17,6 +17,7 @@ namespace Indigo\Core\Controller;
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  *
  * @coversDefaultClass Indigo\Core\Controller\TemplateController
+ * @group              Core
  * @group              Controller
  */
 class TemplateControllerTest extends AbstractControllerTest

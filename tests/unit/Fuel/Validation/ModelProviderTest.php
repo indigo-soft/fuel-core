@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Indigo Core package.
+ *
+ * (c) Indigo Development Team
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 use Fuel\Validation\Validator;
 use Fuel\Validation\RuleProvider\FromArray;
 use Codeception\TestCase\Test;
@@ -10,13 +19,13 @@ use Codeception\TestCase\Test;
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  *
  * @coversDefaultClass Fuel\Validation\RuleProvider\ModelProvider
+ * @group              Fuel
  */
 class ModelProviderTest extends Test
 {
 	/**
 	 * @covers ::forgeValidator
 	 * @covers ::populateValidator
-	 * @group  Fuel
 	 */
 	public function testForge()
 	{
@@ -33,7 +42,6 @@ class ModelProviderTest extends Test
 	/**
 	 * @covers ::getProvider
 	 * @covers ::setProvider
-	 * @group  Fuel
 	 */
 	public function testGetSet()
 	{

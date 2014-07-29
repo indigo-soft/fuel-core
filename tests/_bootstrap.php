@@ -2,12 +2,12 @@
 // This is global bootstrap for autoloading
 
 $fuel = realpath(__DIR__ . '/../../../..');
-$path = null;
+$package = null;
 
 if ($travis = getenv('TRAVIS'))
 {
 	$fuel = '/tmp/fuel';
-	$path = getenv('TRAVIS_BUILD_DIR');
+	$package = getenv('TRAVIS_BUILD_DIR');
 }
 
 $_SERVER['doc_root']     = $fuel;
@@ -18,5 +18,5 @@ $_SERVER['vendor_path']  = $fuel . '/fuel/vendor';
 
 require_once $_SERVER['core_path'] . '/bootstrap_phpunit.php';
 
-\Package::load('core', $path);
+\Package::load('core', $package);
 \Composer::package('core');

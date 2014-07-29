@@ -24,8 +24,6 @@ trait TemplateController
 	 * {@inheritdoc}
 	 *
 	 * Loads the template and creates the $this->template object
-	 *
-	 * @codeCoverageIgnore
 	 */
 	public function before()
 	{
@@ -58,8 +56,6 @@ trait TemplateController
 	 * {@inheritdoc}
 	 *
 	 * Sets the response if no custom response is returned
-	 *
-	 * @codeCoverageIgnore
 	 */
 	public function after($response)
 	{

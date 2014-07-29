@@ -22,13 +22,19 @@ trait TemplateController
 {
 	/**
 	 * {@inheritdoc}
-	 *
-	 * Loads the template and creates the $this->template object
 	 */
 	public function before()
 	{
 		parent::before();
 
+		$this->init();
+	}
+
+	/**
+	 * Loads the template and creates the $this->template object
+	 */
+	protected function init()
+	{
 		if (isset($this->template) === false)
 		{
 			throw new \RuntimeException('Template property does not exist.');

@@ -31,6 +31,7 @@ class TemplateControllerTest extends AbstractControllerTest
 
 	/**
 	 * @covers ::before
+	 * @covers ::init
 	 * @covers ::view
 	 */
 	public function testTemplate()
@@ -41,7 +42,7 @@ class TemplateControllerTest extends AbstractControllerTest
 	}
 
 	/**
-	 * @covers            ::before
+	 * @covers            ::init
 	 * @expectedException RuntimeException
 	 */
 	public function testFailure()

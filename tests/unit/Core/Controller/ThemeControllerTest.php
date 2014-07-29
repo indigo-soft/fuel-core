@@ -31,7 +31,7 @@ class ThemeControllerTest extends TemplateControllerTest
 	}
 
 	/**
-	 * @covers            ::before
+	 * @covers            ::init
 	 * @expectedException RuntimeException
 	 */
 	public function testFailure()

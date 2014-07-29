@@ -19,7 +19,7 @@ require_once $_SERVER['core_path'] . '/bootstrap_phpunit.php';
 if ($travis)
 {
 	$paths = \Config::get('package_paths', []);
-	$paths[] = realpath($travis.'/..');
+	$paths[] = realpath($travis.'/..').DS;
 	\Config::set('package_paths', $paths);
 }
 

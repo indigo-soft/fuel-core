@@ -3,13 +3,8 @@ php:
   - 5.4
   - 5.5
 
-script:
-  - cd /tmp/fuel/fuel/packages/core/
-  - vendor/bin/codecept run
+script: vendor/bin/codecept run
 
 before_script:
-  - cd /tmp
-  - composer create-project --prefer-source fuel/fuel:dev-1.8/develop
-  - cp -r $TRAVIS_BUILD_DIR fuel/fuel/packages/core/
-  - cd fuel/fuel/packages/core/
   - composer install
+  - composer create-project --prefer-source fuel/fuel:dev-1.8/develop /tmp/fuel

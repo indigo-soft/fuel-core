@@ -7,7 +7,7 @@ $package = null;
 if ($travis = getenv('TRAVIS'))
 {
 	$fuel = '/tmp/fuel';
-	$package = getenv('TRAVIS_BUILD_DIR').DS;
+	$package = getenv('TRAVIS_BUILD_DIR').'/';
 }
 
 $_SERVER['doc_root']     = $fuel;

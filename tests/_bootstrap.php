@@ -9,12 +9,12 @@ if ($travis = getenv('TRAVIS_BUILD_DIR'))
 }
 
 $_SERVER['doc_root']     = $fuel;
-$_SERVER['app_path']     = '/fuel/app';
-$_SERVER['core_path']    = '/fuel/core';
-$_SERVER['package_path'] = '/fuel/packages';
-$_SERVER['vendor_path']  = '/fuel/vendor';
+$_SERVER['app_path']     = $fuel . '/fuel/app';
+$_SERVER['core_path']    = $fuel . '/fuel/core';
+$_SERVER['package_path'] = $fuel . '/fuel/packages';
+$_SERVER['vendor_path']  = $fuel . '/fuel/vendor';
 
-require_once $fuel . $_SERVER['core_path'] . '/bootstrap_phpunit.php';
+require_once $_SERVER['core_path'] . '/bootstrap_phpunit.php';
 
 if ($travis)
 {

@@ -3,7 +3,7 @@
 
 $fuel = realpath(__DIR__ . '/../../../..');
 
-if ($travis = getenv('TRAVIS_BUILD_DIR'))
+if ($travis = getenv('TRAVIS'))
 {
 	$fuel = '/tmp/fuel';
 }
@@ -19,7 +19,7 @@ require_once $_SERVER['core_path'] . '/bootstrap_phpunit.php';
 if ($travis)
 {
 	$paths = \Config::get('package_paths', []);
-	$paths[] = realpath($travis.'/..').DS;
+	$paths[] = __DIR__ . '/../../';
 	\Config::set('package_paths', $paths);
 }
 

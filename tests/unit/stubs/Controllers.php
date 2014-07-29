@@ -32,7 +32,7 @@ class DummyThemeController extends \Controller
 {
 	use ThemeController;
 
-	public $template;
+	public $template = 'template.php';
 
 	public $theme = 'default';
 }

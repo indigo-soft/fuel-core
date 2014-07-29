@@ -25,7 +25,7 @@ class TemplateControllerTest extends AbstractControllerTest
 	{
 		$this->controller = new DummyTemplateController($this->getRequestMock());
 
-		$this->controller->template = __DIR__ . '/../../resources/template.php';
+		$this->controller->template = __DIR__ . '/../../resources/default/template.php';
 	}
 
 	/**

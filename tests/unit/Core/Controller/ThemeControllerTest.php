@@ -23,9 +23,10 @@ class ThemeControllerTest extends TemplateControllerTest
 {
 	public function _before()
 	{
-		$this->controller = new DummyThemeController($this->getRequestMock());
+		// Adds a theme path
+		\Theme::instance('default', ['paths' => [__DIR__.'/../../resources/']]);
 
-		$this->controller->template = __DIR__ . '/../../resources/template.php';
+		$this->controller = new DummyThemeController($this->getRequestMock());
 	}
 
 	/**

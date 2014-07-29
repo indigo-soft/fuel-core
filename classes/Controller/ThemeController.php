@@ -21,7 +21,7 @@ namespace Indigo\Core\Controller;
 trait ThemeController
 {
 	use TemplateController {
-		before as _before;
+		before as template_before;
 	}
 
 	/**
@@ -48,7 +48,7 @@ trait ThemeController
 		}
 
 		// Run parent::before here so theme can be used to initialize template
-		$this->_before();
+		$this->template_before();
 
 		$this->theme->set_template($this->template);
 

@@ -35,4 +35,6 @@ class DummyThemeController extends \Controller
 	public $template = 'template.php';
 
 	public $theme = 'default';
+
+	public $theme_active = 'default';
 }

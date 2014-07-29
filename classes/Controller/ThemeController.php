@@ -41,6 +41,12 @@ trait ThemeController
 			$this->theme = \Theme::instance($this->theme);
 		}
 
+		// Sets active theme
+		if (empty($this->theme_active) === false and is_string($this->theme_active))
+		{
+			$this->theme->active($this->theme_active);
+		}
+
 		// Run parent::before here so theme can be used to initialize template
 		$this->_before();
 

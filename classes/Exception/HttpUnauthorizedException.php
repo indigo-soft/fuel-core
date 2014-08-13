@@ -20,6 +20,9 @@ namespace Indigo\Core\Exception;
  */
 class HttpUnauthorizedException extends \HttpException
 {
+	/**
+	 * {@inheritdoc}
+	 */
 	public function response()
 	{
 		return new \Response(\View::forge('401'), 401);

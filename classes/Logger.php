@@ -22,8 +22,14 @@ class Logger extends Facade
 {
 	use Facade\Instance;
 
+	/**
+	 * {@inheritdoc}
+	 */
 	protected static $_config = 'logger';
 
+	/**
+	 * {@inheritdoc}
+	 */
 	public static function forge($instance = 'default', array $handlers = array())
 	{
 		$logger = new Monolog\Logger($instance);

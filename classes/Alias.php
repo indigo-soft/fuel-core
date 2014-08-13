@@ -22,6 +22,9 @@ class Alias extends Facade
 {
 	use Facade\Instance;
 
+	/**
+	 * {@inheritdoc}
+	 */
 	public static function forge($instance = 'default', $placement = 'prepend')
 	{
 		$manager = new Manager;

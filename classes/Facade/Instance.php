@@ -21,7 +21,7 @@ namespace Indigo\Core\Facade;
 trait Instance
 {
 	/**
-	 * {@inheritdocs}
+	 * {@inheritdoc}
 	 */
 	public static function instance($instance = null)
 	{

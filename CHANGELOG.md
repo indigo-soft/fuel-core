@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## 1.0.2 (released 2014-08-13)
+
+* Adds Controllers
+* Adds Http Exceptions
+* Fixes Facade Instance helper bug
+* CS fixes
+
+
 ## 1.0.1 (released 2014-07-13)
 
 * Updates dependencies

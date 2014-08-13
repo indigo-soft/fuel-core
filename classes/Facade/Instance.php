@@ -25,13 +25,13 @@ trait Instance
 	 */
 	public static function instance($instance = null)
 	{
-		$instance = parent::instance($instance);
+		$return = parent::instance($instance);
 
-		if ($instance === false)
+		if ($return === false)
 		{
-			$instance = static::forge($instance);
+			$return = static::forge($instance);
 		}
 
-		return $instance;
+		return $return;
 	}
 }

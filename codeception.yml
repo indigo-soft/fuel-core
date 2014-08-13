@@ -6,14 +6,15 @@ paths:
     helpers: tests/_support
 settings:
     bootstrap: _bootstrap.php
-    suite_class: \PHPUnit_Framework_TestSuite
     colors: true
     memory_limit: 1024M
-    log: true
 coverage:
     enabled: true
     include:
+        - classes/Controller/*
         - classes/Facade.php
         - classes/Facade/*
         - classes/Logger.php
         - classes/Helper/*
+        - lib/Fuel/Fieldset/*
+        - lib/Fuel/Validation/*

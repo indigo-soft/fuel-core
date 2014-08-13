@@ -118,8 +118,9 @@ abstract class Facade
 	/**
 	 * Properly save a new instance
 	 *
-	 * @param  string $name
-	 * @param  mixed  $instance Anything you can call an instance
+	 * @param string $name
+	 * @param mixed  $instance Anything you can call an instance
+	 *
 	 * @return mixed Instance
 	 */
 	public static function newInstance($name, $instance)
@@ -132,7 +133,8 @@ abstract class Facade
 	/**
 	 * Check whether an instance exists
 	 *
-	 * @param  string  $instance
+	 * @param string  $instance
+	 *
 	 * @return boolean
 	 */
 	public static function exists($instance)

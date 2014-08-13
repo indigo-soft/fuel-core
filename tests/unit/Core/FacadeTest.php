@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Indigo Core package.
+ *
+ * (c) Indigo Development Team
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Indigo\Core;
 
 use Codeception\TestCase\Test;
@@ -10,65 +19,66 @@ use Codeception\TestCase\Test;
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  *
  * @coversDefaultClass Indigo\Core\Facade
+ * @group              Core
+ * @group              Facade
  */
 class FacadeTest extends Test
 {
 	public function _before()
 	{
-		\FacadeExample::forge();
+		DummyFacade::forge();
 	}
 
 	/**
 	 * @covers ::forge
-	 * @group  Core
 	 */
 	public function testForge()
 	{
-		$class = \FacadeExample::forge('test');
+		$class = DummyFacade::forge('test');
 
 		$this->assertInstanceOf('stdClass', $class);
 	}
 
 	/**
 	 * @covers ::newInstance
-	 * @group  Core
 	 */
 	public function testNewInstance()
 	{
-		$class = \FacadeExample::newInstance('new', new \stdClass);
+		$class = DummyFacade::newInstance('new', new \stdClass);
 
 		$this->assertInstanceOf('stdClass', $class);
-		$this->assertTrue(\FacadeExample::exists('new'));
+		$this->assertTrue(DummyFacade::exists('new'));
 	}
 
 	/**
 	 * @covers ::exists
-	 * @group  Core
 	 */
 	public function testExists()
 	{
-		$this->assertTrue(\FacadeExample::exists('default'));
-		$this->assertFalse(\FacadeExample::exists('fake'));
+		$this->assertTrue(DummyFacade::exists('default'));
+		$this->assertFalse(DummyFacade::exists('fake'));
 	}
 
 	/**
 	 * @covers ::instance
-	 * @group  Core
 	 */
 	public function testInstance()
 	{
-		$this->assertInstanceOf('stdClass', \FacadeExample::instance('default'));
-		$this->assertFalse(\FacadeExample::instance('fake'));
+		$this->assertInstanceOf('stdClass', DummyFacade::instance('default'));
+		$this->assertFalse(DummyFacade::instance('fake'));
 	}
 
 	/**
 	 * @covers ::delete
-	 * @group  Core
 	 */
 	public function testDelete()
 	{
-		$this->assertTrue(\FacadeExample::delete('default'));
-		$this->assertFalse(\FacadeExample::exists('default'));
-		$this->assertFalse(\FacadeExample::delete('fake'));
+		$this->assertTrue(DummyFacade::delete('default'));
+		$this->assertFalse(DummyFacade::exists('default'));
+		$this->assertFalse(DummyFacade::delete('fake'));
+
+		DummyFacade::forge('test');
+		$this->assertTrue(DummyFacade::delete(true));
+		$this->assertFalse(DummyFacade::exists('test'));
 	}
 }

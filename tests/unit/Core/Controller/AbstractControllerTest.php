@@ -9,26 +9,31 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Core\Facade;
+namespace Indigo\Core\Controller;
 
 use Codeception\TestCase\Test;
 
 /**
- * Tests for Facade Instance
+ * Tests for Controllers
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
- *
- * @coversDefaultClass Indigo\Core\Facade\Instance
- * @group              Core
- * @group              Facade
  */
-class InstanceTest extends Test
+abstract class AbstractControllerTest extends Test
 {
 	/**
-	 * @covers ::instance
+	 * Controller object
+	 *
+	 * @var Controller
 	 */
-	public function testInstance()
+	protected $controller;
+
+	/**
+	 * Returns Request mock
+	 *
+	 * @return Request
+	 */
+	protected function getRequestMock()
 	{
-		$this->assertInstanceOf('stdClass', \AdvancedDummyFacade::instance('test'));
+		return \Mockery::mock('Request');
 	}
 }

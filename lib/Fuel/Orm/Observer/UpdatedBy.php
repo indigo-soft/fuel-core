@@ -46,7 +46,7 @@ class UpdatedBy extends Orm\Observer
 
 	/**
 	 * Sets the properties for this observer instance, based on the parent model's
-	 * configuration or the defined defaults.
+	 * configuration or the defined defaults
 	 *
 	 * @param string Model class this observer is called on
 	 */
@@ -58,7 +58,7 @@ class UpdatedBy extends Orm\Observer
 	}
 
 	/**
-	 * Sets the UpdatedBy property to the current user id.
+	 * Sets the UpdatedBy property to the current user id
 	 *
 	 * @param Model Model object subject of this observer method
 	 */
@@ -68,7 +68,7 @@ class UpdatedBy extends Orm\Observer
 	}
 
 	/**
-	 * Sets the UpdatedBy property to the current user id.
+	 * Sets the UpdatedBy property to the current user id
 	 *
 	 * @param Model Model object subject of this observer method
 	 */
@@ -93,9 +93,9 @@ class UpdatedBy extends Orm\Observer
 	}
 
 	/**
-	 * Checks to see if any models in the given relation are changed.
+	 * Checks to see if any models in the given relation are changed
 	 * This function is lazy so will return true as soon
-	 * as it finds something that has changed.
+	 * as it finds something that has changed
 	 *
 	 * @param Model  $obj
 	 * @param string $relation

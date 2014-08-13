@@ -1,44 +1,63 @@
 <?php
 
+/*
+ * This file is part of the Indigo Core package.
+ *
+ * (c) Indigo Development Team
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Indigo\Core\Helper;
 
 use Codeception\TestCase\Test;
 
 /**
- * Tests for Forge Instance helper
+ * Tests for Config Helper
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  *
  * @coversDefaultClass Indigo\Core\Helper\Config
+ * @group              Core
+ * @group              Helper
  */
 class ConfigTest extends Test
 {
+	/**
+	 * Class using Config Helper
+	 *
+	 * @var DummyConfig
+	 */
 	protected $object;
 
-	protected $config = array(
+	/**
+	 * Config array
+	 *
+	 * @var []
+	 */
+	protected $config = [
 		'key' => 'value',
-	);
+	];
 
 	public function _before()
 	{
-		$this->object = new \ConfigUtilExample($this->config);
+		$this->object = new DummyConfig($this->config);
 	}
 
 	/**
 	 * @covers ::getConfig
-	 * @group  Core
 	 */
 	public function testGetConfig()
 	{
 		$this->assertEquals('value', $this->object->getConfig('key'));
 		$this->assertNull($this->object->getConfig('NON_EXISTING_KEY'));
 		$this->assertFalse($this->object->getConfig('NON_EXISTING_KEY', false));
-		$this->assertEquals(array('key' => 'value'), $this->object->getConfig(array('key')));
+		$this->assertEquals(['key' => 'value'], $this->object->getConfig(['key']));
 	}
 
 	/**
 	 * @covers ::setConfig
-	 * @group  Core
 	 */
 	public function testSetConfig()
 	{
@@ -48,13 +67,12 @@ class ConfigTest extends Test
 
 	/**
 	 * @covers ::mergeConfig
-	 * @group  Core
 	 */
 	public function testMergeConfig()
 	{
-		$config = array(
-			'key3' => 'value4'
-		);
+		$config = [
+			'key3' => 'value4',
+		];
 
 		$this->object->mergeConfig($config, true);
 
@@ -64,13 +82,12 @@ class ConfigTest extends Test
 
 		/**
 	 * @covers ::mergeConfig
-	 * @group  Core
 	 */
 	public function testMergeConfigReverse()
 	{
-		$config = array(
-			'key2' => 'value3'
-		);
+		$config = [
+			'key2' => 'value3',
+		];
 
 		$this->object->mergeConfig($config);
 

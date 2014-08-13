@@ -9,28 +9,22 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Core;
-
-use Fuel\Alias\Manager;
+namespace Indigo\Core\Exception;
 
 /**
- * Alias Facade class
+ * HTTP Unauthorized Exception
+ *
+ * Return 401 code
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Alias extends Facade
+class HttpUnauthorizedException extends \HttpException
 {
-	use Facade\Instance;
-
 	/**
 	 * {@inheritdoc}
 	 */
-	public static function forge($instance = 'default', $placement = 'prepend')
+	public function response()
 	{
-		$manager = new Manager;
-
-		$manager->register($placement);
-
-		return static::newInstance($instance, $manager);
+		return new \Response(\View::forge('401'), 401);
 	}
 }

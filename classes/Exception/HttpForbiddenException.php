@@ -9,28 +9,22 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Core;
-
-use Fuel\Alias\Manager;
+namespace Indigo\Core\Exception;
 
 /**
- * Alias Facade class
+ * HTTP Forbidden Exception
+ *
+ * Return 403 code
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Alias extends Facade
+class HttpForbiddenException extends \HttpException
 {
-	use Facade\Instance;
-
 	/**
 	 * {@inheritdoc}
 	 */
-	public static function forge($instance = 'default', $placement = 'prepend')
+	public function response()
 	{
-		$manager = new Manager;
-
-		$manager->register($placement);
-
-		return static::newInstance($instance, $manager);
+		return new \Response(\View::forge('403'), 403);
 	}
 }

@@ -11,60 +11,76 @@
 
 namespace Fuel\Orm\Observer;
 
+use Fuel\Orm\SortableInterface;
 use Orm;
 
 /**
- * Created By observer
+ * Sort observer
  *
- * Sets a user_id property on insert
+ * Sets a sort property on insert
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class CreatedBy extends Orm\Observer
+class Sort extends Orm\Observer
 {
 	/**
-	 * Default property to set the id on
+	 * Default property to set the sort value on
 	 *
 	 * @var string
 	 */
-	public static $property = 'created_by';
+	public static $property = 'sort';
 
 	/**
-	 * Property to set the id on
+	 * Default offset value
+	 *
+	 * @var integer
+	 */
+	public static $offset = 10;
+
+	/**
+	 * Property to set the sort value on
 	 *
 	 * @var string
 	 */
 	protected $_property;
 
 	/**
+	 * Default offset value
+	 *
+	 * @var integer
+	 */
+	protected $_offset;
+
+	/**
 	 * Sets the properties for this observer instance, based on the parent model's
-	 * configuration or the defined defaults
+	 * configuration or the defined defaults.
 	 *
 	 * @param string Model class this observer is called on
 	 */
 	public function __construct($class)
 	{
 		$props = $class::observers(get_class($this));
+
 		$this->_property = isset($props['property']) ? $props['property'] : static::$property;
+		$this->_offset = isset($props['offset']) ? $props['offset'] : static::$offset;
 	}
 
 	/**
-	 * Sets the CreatedBy property to the current user id
+	 * Sets the sort property to the current sort value
 	 *
 	 * @param Model Model object subject of this observer method
 	 */
 	public function before_insert(Orm\Model $obj)
 	{
-		if ($obj instanceof Orm\Model_Temporal)
+		if ($obj instanceof SortableInterface)
 		{
-			if ($obj->{$obj->temporal_property('end_column')} !== $obj->temporal_property('max_timestamp')) {
-				return false;
-			}
+			$max = $obj->getSortMax();
+		}
+		else
+		{
+			$max = $obj->query()->max($this->_property);
 		}
 
-		if ($user_id = \Auth::get_user_id())
-		{
-			$obj->{$this->_property} = $user_id[1];
-		}
+		$obj->{$this->_property} = $max + $this->_offset;
 	}
 }

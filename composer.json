@@ -16,18 +16,28 @@
         }
     ],
     "require": {
+        "php": ">=5.4.0",
         "composer/installers": "~1.0",
         "indigophp/fuel-composer": "~1.1.0",
         "fuelphp/alias": "dev-master"
     },
     "require-dev": {
+        "fuelphp/fieldset": "dev-master",
+        "fuelphp/validation": "dev-master",
         "codeception/codeception": "~2.0.0",
-        "codeception/mockery-module": "dev-master"
+        "codeception/mockery-module": "dev-master",
+        "indigophp/codeception-fuel-module": "dev-develop"
+    },
+    "suggest": {
+        "fuelphp/fieldset": "FuelPHP 2.0 Fieldset",
+        "fuelphp/validation": "FuelPHP 2.0 Validation"
     },
     "autoload": {
         "psr-0": {
             "Monolog\\": "lib/",
-            "Fuel\\Orm\\": "lib/"
+            "Fuel\\Fieldset\\": "lib/",
+            "Fuel\\Orm\\": "lib/",
+            "Fuel\\Validation\\": "lib/"
         },
         "psr-4": {
             "Indigo\\Core\\": "classes/"
@@ -37,6 +47,11 @@
         ]
     },
     "extra": {
+        "branch-alias": {
+            "dev-develop": "1.0.x-dev"
+        },
         "installer-name": "core"
-    }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
 }

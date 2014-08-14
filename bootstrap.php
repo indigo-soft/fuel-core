@@ -26,6 +26,5 @@ Autoloader::add_classes(array(
 	/**
 	 * Core extensions
 	 */
-	'Indigo\\Core\\Module' => __DIR__ . '/classes/module.php',
 	'Indigo\\Core\\Theme'  => __DIR__ . '/classes/theme.php',
 ));

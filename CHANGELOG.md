@@ -1,10 +1,17 @@
 # CHANGELOG
 
 
+## 1.0.3 (released 2014-08-15)
+
+* Removes Module extension
+
+
 ## 1.0.2 (released 2014-08-13)
 
 * Adds Controllers
 * Adds Http Exceptions
+* Adds Fuel Validation provider
+* Adds Fuel Fieldset builder
 * Fixes Facade Instance helper bug
 * CS fixes
 

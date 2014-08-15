@@ -9,7 +9,8 @@
  * file that was distributed with this source code.
  */
 
-Autoloader::add_core_namespace('Indigo\\Core');
+Autoloader::add_core_namespace('Indigo\\Core', true);
+Autoloader::add_core_namespace('Indigo\\Fuel', true);
 
 /**
  * Core Extensions

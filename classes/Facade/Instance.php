@@ -25,7 +25,7 @@ trait Instance
 	 *
 	 * @var string
 	 */
-	protected static $instance;
+	protected static $_instance;
 
 	/**
 	 * {@inheritdoc}
@@ -35,7 +35,7 @@ trait Instance
 		// Try to get a default instance name
 		if ($instance === null)
 		{
-			$instance = static::$instance;
+			$instance = static::$_instance;
 		}
 
 		// Try to get an existing instance
@@ -57,6 +57,6 @@ trait Instance
 	 */
 	public static function getDefaultInstance()
 	{
-		return static::$instance;
+		return static::$_instance;
 	}
 }

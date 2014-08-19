@@ -31,4 +31,14 @@ class InstanceTest extends Test
 	{
 		$this->assertInstanceOf('stdClass', \AdvancedDummyFacade::instance('test'));
 	}
+
+	/**
+	 * @covers ::instance
+	 * @covers ::getDefaultInstance
+	 */
+	public function testDefaultInstance()
+	{
+		$this->assertInstanceOf('stdClass', \AdvancedDummyFacade::instance());
+		$this->assertNull(\AdvancedDummyFacade::getDefaultInstance());
+	}
 }

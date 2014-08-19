@@ -21,17 +21,42 @@ namespace Indigo\Core\Facade;
 trait Instance
 {
 	/**
+	 * Default instance name
+	 *
+	 * @var string
+	 */
+	protected static $instance;
+
+	/**
 	 * {@inheritdoc}
 	 */
 	public static function instance($instance = null)
 	{
+		// Try to get a default instance name
+		if ($instance === null)
+		{
+			$instance = static::$instance;
+		}
+
+		// Try to get an existing instance
 		$return = parent::instance($instance);
 
+		// Fallback to forging one
 		if ($return === false)
 		{
 			$return = static::forge($instance);
 		}
 
 		return $return;
+	}
+
+	/**
+	 * Returns the default instance name
+	 *
+	 * @return string
+	 */
+	public static function getDefaultInstance()
+	{
+		return static::$instance;
 	}
 }

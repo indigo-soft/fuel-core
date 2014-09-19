@@ -28,7 +28,7 @@ trait Config
 	protected $config = array();
 
 	/**
-	* Get config
+	* Returns config
 	*
 	* @param mixed $key     Config key
 	* @param mixed $default Default value

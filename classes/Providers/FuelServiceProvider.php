@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Core;
+namespace Indigo\Core\Providers;
 
 use Fuel\Dependency\ServiceProvider;
 
@@ -42,20 +42,13 @@ class FuelServiceProvider extends ServiceProvider
 	 * Resolves an Alias Manager
 	 *
 	 * @param Container $dic
-	 * @param []        $config
+	 * @param string    $placement
 	 *
 	 * @return Manager
 	 */
-	public function resolveManager($dic, array $config = [])
+	public function resolveManager($dic, $placement = 'prepend')
 	{
 		$manager = $dic->resolve('Fuel\\Alias\\Manager');
-
-		$placement = 'prepend';
-
-		if (isset($config['placement']))
-		{
-			$placement = $config['placement'];
-		}
 
 		$manager->register($placement);
 

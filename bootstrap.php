@@ -21,3 +21,8 @@ Autoloader::add_classes(array(
 	 */
 	'Indigo\\Core\\Theme'  => __DIR__ . '/classes/theme.php',
 ));
+
+// $namespace = DC::resolve('alias.namespace');
+// $namespace->aliasNamespace('Indigo\\Core', '');
+// $namespace->aliasNamespace('Indigo\\Core\\Exception', '');
+// $namespace->aliasNamespace('Indigo\\Fuel', '');
